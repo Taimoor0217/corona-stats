@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import CoronaApi from '../helpers/coronaapi';
+import Card from './card';
 export default class Landing extends Component{
     constructor(){
         super()
@@ -8,7 +9,6 @@ export default class Landing extends Component{
             data: []
         }
     }
-
     componentDidMount() {
       CoronaApi.getCountries()
       .then(Response=>{
@@ -23,9 +23,13 @@ export default class Landing extends Component{
     }
     render(){
         return(
-            <h1> 
-                {this.state.message}
-            </h1>
+            <div className="cardHolder">
+                {this.state.data.map(function (country , index) {
+                    return(
+                        <Card key={index} {...country} />
+                    )
+                })}
+            </div>
         )
     }
 }
