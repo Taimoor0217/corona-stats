@@ -14,3 +14,18 @@
   flex-wrap: wrap;
   padding:  2%;
 }
+
+.Header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 2px;
+  background: rgba(192, 183, 183, 0.842);
+}
+.Body{
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  text-align: justify;
+}
